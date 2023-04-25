@@ -9,3 +9,6 @@
 #Enable-PSRemoting -Force
 
 #If it still doesnt work create an inbound defender firewall rule for ports 5985,8986
+
+#New-NetFirewallRule -DisplayName "Allow Ansible" -Direction Inbound -LocalPort 5985,5986 -Protocol TCP -Action Allow
+
