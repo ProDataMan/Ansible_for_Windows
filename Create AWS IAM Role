@@ -1,0 +1,60 @@
+Open the AWS Management Console and navigate to the IAM service.
+
+Click on "Roles" in the left-hand menu.
+
+Click the "Create role" button.
+
+Select "AWS service" as the trusted entity and then select "EC2" as the service that will use this role.
+
+Click the "Next: Permissions" button.
+
+In the "Attach permissions policies" step, search for "PowerShell" in the search box to find policies that include PowerShell permissions.
+
+Select the appropriate policies based on your requirements. 
+For example, you can select the "AmazonEC2RoleforSSM" policy to grant permissions to run PowerShell commands on Windows instances.
+
+Click the "Next: Tags" button, add any tags as needed, and click the "Next: Review" button.
+
+Give the role a name and a description, and click the "Create role" button.
+
+Once the role is created, select it from the list of roles in the IAM console.
+
+Click the "Trust relationships" tab and edit the trust policy to include the following statement:
+
+{
+  "Effect": "Allow",
+  "Principal": {
+    "Service": "ec2.amazonaws.com"
+  },
+  "Action": "sts:AssumeRole"
+}
+
+This statement allows EC2 instances to assume the role.
+
+Click the "Add inline policy" button to create a policy that grants permissions to access the Windows Server 2019 instance. 
+Use the following policy as a template, replacing the placeholders with the appropriate values:
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances",
+                "ec2:DescribeInstanceStatus",
+                "ec2:StartInstances",
+                "ec2:StopInstances",
+                "ec2:RebootInstances",
+                "ssm:SendCommand",
+                "ssm:GetCommandInvocation"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+This policy grants permissions to start and stop instances, as well as run PowerShell commands on the Windows Server 2019 instance
+using the AWS Systems Manager (SSM) service.
+
+Click the "Review policy" button, give the policy a name and a description, and click the "Create policy" button.
+
+The role is now ready to be used to manage the Windows Server 2019 instance using Ansible on Linux in AWS.
