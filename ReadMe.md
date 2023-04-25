@@ -29,7 +29,7 @@ Enable-PSRemoting -Force
 ```
 
 6. ### Create a new Ansible playbook or modify an existing one to include tasks that target the Windows Server 2019 instance. 
-For example, you can create a playbook called win.yml with the following content:
+For example, you can create a playbook called win_iis.yml with the following content:
 
 ```yaml
 - name: Install IIS on Windows Server 2019
@@ -42,14 +42,14 @@ For example, you can create a playbook called win.yml with the following content
         state: present
 ```
 
-7. ### Create an inventory file that includes the Windows Server 2019 instance. For example, you can create a file called hosts with the following content:
+7. ### Create an inventory file that includes the Windows Server 2019 instance. For example, you can create a file called inventory with the following content:
 
 ```ini
 [windows]
 <IP address or hostname of the Windows Server 2019 instance>
 ```
 Run the Ansible playbook using the ansible-playbook command. Make sure to specify the inventory file using the -i option. 
-For example, you can run the following command to execute the win.yml playbook on the Windows Server 2019 instance:
+For example, you can run the following command to execute the win_iis.yml playbook on the Windows Server 2019 instance:
 ```ansible
-ansible-playbook -i hosts win.yml
+ansible-playbook -i inventory win_iis.yml
 ```
