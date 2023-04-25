@@ -11,5 +11,5 @@ ansible localhost -m setup
 ```
 
 ```
-ansible -i inventory webservers -m command -a "uptime"
+ansible -i inventory webservers -m win_command -a "uptime"
 ```
