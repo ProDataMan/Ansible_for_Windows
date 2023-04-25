@@ -1,0 +1,9 @@
+- name: Install IIS on Windows Server 2019
+  hosts: windows
+  gather_facts: no
+  tasks:
+    - name: Install IIS
+      win_feature:
+        name: Web-Server
+        state: present
+
