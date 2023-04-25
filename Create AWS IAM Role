@@ -1,60 +1,43 @@
-Open the AWS Management Console and navigate to the IAM service.
+Sign in to the AWS Management Console and navigate to the IAM console.
 
-Click on "Roles" in the left-hand menu.
+In the left navigation pane, click on "Roles".
 
 Click the "Create role" button.
 
-Select "AWS service" as the trusted entity and then select "EC2" as the service that will use this role.
+Choose "AWS service" as the trusted entity and select "EC2" as the service that will use this role.
 
-Click the "Next: Permissions" button.
+Click "Next: Permissions".
 
-In the "Attach permissions policies" step, search for "PowerShell" in the search box to find policies that include PowerShell permissions.
+On the "Attach permissions policies" page, search for and select the following policies:
 
-Select the appropriate policies based on your requirements. 
-For example, you can select the "AmazonEC2RoleforSSM" policy to grant permissions to run PowerShell commands on Windows instances.
+AmazonSSMManagedInstanceCore
+AmazonEC2RoleforSSM
+Note: These policies allow the EC2 instances to communicate with AWS Systems Manager, which is used to manage and configure Windows instances.
 
-Click the "Next: Tags" button, add any tags as needed, and click the "Next: Review" button.
+Click "Next: Tags". You can add tags to help organize your resources, but they are not required for this setup.
 
-Give the role a name and a description, and click the "Create role" button.
+Click "Next: Review".
 
-Once the role is created, select it from the list of roles in the IAM console.
+On the "Review" page, give the role a descriptive name (e.g. "Ansible-Windows-Role").
 
-Click the "Trust relationships" tab and edit the trust policy to include the following statement:
+Review the role's policies and make sure they grant the required permissions.
 
-{
-  "Effect": "Allow",
-  "Principal": {
-    "Service": "ec2.amazonaws.com"
-  },
-  "Action": "sts:AssumeRole"
-}
+Click "Create role".
 
-This statement allows EC2 instances to assume the role.
+Note the ARN of the newly created IAM role, which you will use to assign it to the Linux instance that will act as the Ansible control node.
 
-Click the "Add inline policy" button to create a policy that grants permissions to access the Windows Server 2019 instance. 
-Use the following policy as a template, replacing the placeholders with the appropriate values:
+Now that you have created the IAM role, you can proceed to assign it to the Linux instance that will act as the Ansible control node. To do this, follow these steps:
 
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:DescribeInstances",
-                "ec2:DescribeInstanceStatus",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:RebootInstances",
-                "ssm:SendCommand",
-                "ssm:GetCommandInvocation"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
-This policy grants permissions to start and stop instances, as well as run PowerShell commands on the Windows Server 2019 instance
-using the AWS Systems Manager (SSM) service.
+Navigate to the EC2 console in the AWS Management Console.
 
-Click the "Review policy" button, give the policy a name and a description, and click the "Create policy" button.
+Select the Linux instance that you want to use as the Ansible control node.
 
-The role is now ready to be used to manage the Windows Server 2019 instance using Ansible on Linux in AWS.
+Click on "Actions" and then "Instance Settings".
+
+Click on "Attach/Replace IAM Role".
+
+In the "Attach IAM Role" dialog box, select the IAM role that you created earlier.
+
+Click "Apply".
+
+The IAM role is now assigned to the Linux instance, and Ansible will be able to use the IAM role to access the Windows Server 2019 instance.
