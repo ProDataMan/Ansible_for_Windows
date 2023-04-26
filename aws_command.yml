@@ -1,6 +1,6 @@
 ---
 - name: Execute command on AWS instance
-  hosts: webservers
+  hosts: Name
   become: true
   tasks:
     - name: Run command
