@@ -7,7 +7,7 @@
   tasks:
     - name: Get EC2 Instance Information
       ec2_instance_info:
-        region: us-west-2
+        region: us-west-1
       register: ec2_info
 
     - name: Print Instance IDs
