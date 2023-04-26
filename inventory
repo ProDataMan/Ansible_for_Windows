@@ -1,2 +1,2 @@
-[windows] #This is the group name
-54.241.188.20
+[webservers] #This is the group name
+webserver ansible_host=13.57.29.93 ansible_user=Administrator ansible_password=JustM300 ansible_connection=winrm ansible_winrm_transport=ntlm ansible_winrm_server_cert_validation=ignore
