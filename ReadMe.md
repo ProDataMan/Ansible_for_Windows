@@ -54,3 +54,8 @@ For example, you can run the following command to execute the win_iis.yml playbo
 ```ansible
 ansible-playbook -i inventory win_iis.yml
 ```
+
+Dynamic Inventory
+```
+ansible-playbook -i inventory DynamicInventory.yml
+```
