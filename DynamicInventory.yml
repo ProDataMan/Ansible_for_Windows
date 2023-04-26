@@ -8,4 +8,7 @@ keyed_groups:
     prefix: tag_role
 compose:
   ansible_host: private_ip_address # or public_ip_address
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin

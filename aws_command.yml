@@ -1,0 +1,12 @@
+---
+- name: Execute command on AWS instance
+  hosts: tag_role_webservers
+  become: true
+  tasks:
+    - name: Run command
+      shell: uptime
+      register: command_output
+
+    - name: Display command output
+      debug:
+        var: command_output.stdout_lines

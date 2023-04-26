@@ -8,6 +8,19 @@
 sudo apt-get update
 sudo apt-get install ansible
 ```
+
+Install Python
+
+```
+sudo apt-get update && sudo apt-get install -y python3-pip
+```
+
+Install boto3 and botocore
+
+```
+pip3 install boto3 botocore
+```
+
 3. ### Create an IAM role in AWS that grants permissions to access the Windows Server 2019 instance. 
 The role should have permissions to perform the following actions on the Windows Server 2019 instance:
 
@@ -58,4 +71,9 @@ ansible-playbook -i inventory win_iis.yml
 Dynamic Inventory
 ```
 ansible-playbook -i inventory DynamicInventory.yml
+```
+Set AWS Access Key and Secret Key
+```
+export AWS_ACCESS_KEY_ID=<your_access_key_id>
+export AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
 ```
