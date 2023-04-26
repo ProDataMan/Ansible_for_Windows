@@ -59,11 +59,17 @@ For example, you can create a playbook called win_iis.yml with the following con
 
 ```ini
 [windows]
-winserver ansible_host=<PUBLIC_IP_ADDRESS> ansible_user=Administrator ansible_password=JustM300 ansible_connection=winrm ansible_winrm_transport=ntlm ansible_winrm_server_cert_validation=ignore
+winserver ansible_host=<PUBLIC_IP_ADDRESS> 
+ansible_user=Administrator 
+ansible_password=JustM300 
+ansible_connection=winrm 
+ansible_winrm_transport=ntlm 
+ansible_winrm_server_cert_validation=ignore
 
 ```
 Run the Ansible playbook using the ansible-playbook command. Make sure to specify the inventory file using the -i option. 
 For example, you can run the following command to execute the win_iis.yml playbook on the Windows Server 2019 instance:
+
 ```ansible
 ansible-playbook -i inventory win_iis.yml
 ```
@@ -72,8 +78,12 @@ Dynamic Inventory
 ```
 ansible-playbook -i inventory DynamicInventory.yml
 ```
+Get AWS EC2 Instances
+```
+ANSIBLE_STDOUT_CALLBACK=yaml 
+```
 Set AWS Access Key and Secret Key
 ```
-export AWS_ACCESS_KEY_ID=<your_access_key_id>
-export AWS_SECRET_ACCESS_KEY=<your_secret_access_key>
+export AWS_ACCESS_KEY_ID=AKIARKD3YLU7WS5KUF7Q
+export AWS_SECRET_ACCESS_KEY=bl+tpOeIjdQsrUq8+bdnV9p6+C2dmnh3pf3+xYz8
 ```
