@@ -92,8 +92,4 @@ Get AWS EC2 Instances
 ```
 ANSIBLE_STDOUT_CALLBACK=yaml 
 ```
-Set AWS Access Key and Secret Key
-```
-export AWS_ACCESS_KEY_ID=PDMAKIARKD3YLU7WS5KUF7Q
-export AWS_SECRET_ACCESS_KEY=PDMbl+tpOeIjdQsrUq8+bdnV9p6+C2dmnh3pf3+xYz8
-```
+
