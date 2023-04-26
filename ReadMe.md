@@ -46,7 +46,8 @@ For example, you can create a playbook called win_iis.yml with the following con
 
 ```ini
 [windows]
-<IP address or hostname of the Windows Server 2019 instance>
+winserver ansible_host=<PUBLIC_IP_ADDRESS> ansible_user=Administrator ansible_password=JustM300 ansible_connection=winrm ansible_winrm_transport=ntlm ansible_winrm_server_cert_validation=ignore
+
 ```
 Run the Ansible playbook using the ansible-playbook command. Make sure to specify the inventory file using the -i option. 
 For example, you can run the following command to execute the win_iis.yml playbook on the Windows Server 2019 instance:
