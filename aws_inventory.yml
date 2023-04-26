@@ -1,0 +1,5 @@
+plugin: aws_ec2
+regions:
+  - us-west-1
+key_name: AWSUbuntu2022
+group_by_instance_id: yes
