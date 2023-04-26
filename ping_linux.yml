@@ -1,0 +1,7 @@
+---
+- name: Ping Linux Servers
+  hosts: linux
+  gather_facts: yes
+  tasks:
+  - name: Ping Linux Server
+    ping:

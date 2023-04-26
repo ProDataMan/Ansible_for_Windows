@@ -1,0 +1,14 @@
+---
+- name: Ping All Servers
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Ping Linux hosts
+      ping:
+      delegate_to: "{{ inventory_hostname }}"
+      when: "'linux' in group_names"
+
+    - name: Ping Windows hosts
+      win_ping:
+      delegate_to: "{{ inventory_hostname }}"
+      when: "'windows' in group_names"
