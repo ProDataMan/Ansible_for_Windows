@@ -1,6 +1,6 @@
 ---
 - name: Ping Windows server
-  hosts: windows
+  hosts: webservers
   tasks:
   - name: Ping Windows server
     ping:
