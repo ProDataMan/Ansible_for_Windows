@@ -1,6 +1,12 @@
 ---
-  - name: Ensure IIS is installed and started 
+- name: Ensure IIS is installed and started 
     hosts: webservers
+  become_method: runas
+  vars:
+    ansible_connection: winrm
+    ansible_winrm_server_cert_validation: ignore
+    ansible_user: Administrator
+    ansible_password: JustM300
     become: yes 
     vars:
       service_name: IIS Admin Service
