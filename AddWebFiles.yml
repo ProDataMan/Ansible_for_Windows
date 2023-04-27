@@ -6,15 +6,15 @@
       service_name: IIS Admin Service
     
     tasks:
-      name: Ensure IIS Server is present 
-      win_feature:
-        name:  Web-Server
-        state: present
-      name: Ensure latest index.html file is present
-      win_copy:
-        src: files/index.html
-        dest: c:\www\
-      name: Ensure IIS is started
-      win_service:
-        name: "{{ service_name }}"
-        state: started
+      - name: Ensure IIS Server is present 
+        win_feature:
+          name:  Web-Server
+          state: present
+      - name: Ensure latest index.html file is present
+        win_copy:
+          src: files/index.html
+          dest: c:\www\
+      - name: Ensure IIS is started
+        win_service:
+          name: "{{ service_name }}"
+          state: started
