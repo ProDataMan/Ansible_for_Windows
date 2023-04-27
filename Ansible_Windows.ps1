@@ -4,15 +4,20 @@
 
 #winrm get winrm/config/client
 
-
 #Not necessary for Windows Server 2022 or 2019)
+
 #Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 
 #winrm set winrm/config/service '@{AllowUnencrypted="true"}'
 
-#New-SelfSignedCertificate -DnsName "localhost" -CertStoreLocation "cert:\LocalMachine\My"
+# Create self-signed certificate
+# $cert = New-SelfSignedCertificate -DnsName "localhost" -CertStoreLocation "cert:\LocalMachine\My"
 
-#New-Item -Path WSMan:\localhost\Listener -Transport HTTPS -Address * -CertificateThumbPrint "B5048A2D90AFB2AD9407311C3CD775427BF9B453" -Force
+# Get the certificate thumbprint
+# $thumbprint = $cert.Thumbprint
+
+# Create a new listener using the certificate thumbprint
+# New-Item -Path WSMan:\localhost\Listener -Transport HTTPS -Address * -CertificateThumbPrint $thumbprint -Force
 
 #Enable-PSRemoting -Force
 
