@@ -11,7 +11,7 @@
     service_name: IIS Admin Service   
   tasks:
     - name: Ensure IIS Server is present 
-      win_feature
+      win_feature:
         name:  Web-Server
         state: present
     - name: Ensure latest index.html file is present
