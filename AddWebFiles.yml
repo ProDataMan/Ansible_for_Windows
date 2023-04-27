@@ -1,6 +1,6 @@
 ---
   - name: Ensure IIS is installed and started 
-    hosts: web
+    hosts: webservers
     become: yes 
     vars:
       service_name: IIS Admin Service
