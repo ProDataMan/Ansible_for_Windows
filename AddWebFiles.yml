@@ -9,7 +9,7 @@
     ansible_winrm_server_cert_validation: ignore
     ansible_user: Administrator
     ansible_password: JustM300
-    service_name: W3SVC   
+    service_name: IIS Admin Service   
   tasks:
     - name: Ensure IIS Server is present 
       win_feature:
