@@ -18,7 +18,7 @@
     - name: Ensure latest index.html file is present
       win_copy:
         src: files/index.html
-        dest: c:\www\
+        dest: c:\inetpub\wwwroot\
     - name: Ensure IIS is started
       win_service:
         name: "{{ service_name }}"
