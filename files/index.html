@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Time Zones</title>
     <meta charset="UTF-8">
-    <title>Current Time in Multiple Locations</title>
-    <script src="timescript.js"></script>
   </head>
   <body>
-    <h1>Current Time in Multiple Locations</h1>
+    <h1>Current Time in Various Time Zones</h1>
     <div id="bangkok"></div>
     <div id="seattle"></div>
     <div id="denver"></div>
     <div id="texas"></div>
     <div id="new-york"></div>
+    <script>
+      function displayTime() {
+        // Bangkok time
+        var bangkokTime = new Date().toLocaleString("en-US", {timeZone: "Asia/Bangkok"});
+        document.getElementById("bangkok").innerHTML = "Bangkok: " + bangkokTime;
+
+        // Seattle time
+        var seattleTime = new Date().toLocaleString("en-US", {timeZone: "America/Los_Angeles"});
+        document.getElementById("seattle").innerHTML = "Seattle: " + seattleTime;
+
+        // Denver time
+        var denverTime = new Date().toLocaleString("en-US", {timeZone: "America/Denver"});
+        document.getElementById("denver").innerHTML = "Denver: " + denverTime;
+
+        // Texas time
+        var texasTime = new Date().toLocaleString("en-US", {timeZone: "America/Chicago"});
+        document.getElementById("texas").innerHTML = "Texas: " + texasTime;
+
+        // New York time
+        var newYorkTime = new Date().toLocaleString("en-US", {timeZone: "America/New_York"});
+        document.getElementById("new-york").innerHTML = "New York: " + newYorkTime;
+      }
+      setInterval(displayTime, 1000);
+    </script>
   </body>
 </html>
