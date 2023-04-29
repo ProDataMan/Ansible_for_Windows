@@ -23,7 +23,6 @@
         src: files/*
         dest: c:\inetpub\wwwroot\
         force: yes
-      remote_src: yes
     - name: Ensure IIS is started
       win_service:
         name: "{{ service_name }}"
