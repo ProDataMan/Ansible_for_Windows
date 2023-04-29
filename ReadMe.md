@@ -103,4 +103,4 @@ update the inventory file and replace the ansible_user and ansible_password line
 ```
           ansible_user: "{{ vault_windows_user }}"
           ansible_password: "{{ vault_windows_password }}"
-          ```
+```
