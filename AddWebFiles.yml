@@ -24,7 +24,7 @@
       win_shell: rm -r c:\inetpub\wwwroot\*
     - name: Ensure latest index.html file is present
       win_copy:
-        src: files/*
+        src: files/
         dest: c:\inetpub\wwwroot\
         force: yes
     - name: Ensure IIS is started
