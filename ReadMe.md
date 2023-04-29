@@ -92,10 +92,16 @@ Get AWS EC2 Instances
 ```
 ANSIBLE_STDOUT_CALLBACK=yaml 
 ```
-encrypt creditials.yml in valut
+Create vault/credentials.yml file in the vault direcotry
+```
+windows_user: Administrator
+windows_password: JustM300
 
 ```
-ansible-vault encrypt credentials.yml
+encrypt creditials.yml in the vault directory
+
+```
+ansible-vault encrypt vault/credentials.yml
 ```
 
 update the inventory file and replace the ansible_user and ansible_password lines with a referecen to the vault
@@ -104,14 +110,21 @@ update the inventory file and replace the ansible_user and ansible_password line
           ansible_user: "{{ vault_windows_user }}"
           ansible_password: "{{ vault_windows_password }}"
 ```
+Create a vault_pass file in the vault directory and add a single line to the file with the vault password ILoveAnsible
+```
+ILoveAnsible
+
+```
+
 Execute playbook using vault credentials
 
 ```
 ansible-playbook AddWebFiles.yml --ask-vault-pass
 ```
 
-Add this to the ansible cfg file
+Update the ansible cfg file to include the path to the vault_pass file
 ```
 	[defaults]
-  	  vault_password_file = ~/.vault_pass
+	  inventory = inventory.yml
+  	  vault_password_file = ~/vault/vault_pass
 ```
