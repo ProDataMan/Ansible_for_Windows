@@ -95,7 +95,7 @@ ANSIBLE_STDOUT_CALLBACK=yaml
 encrypt creditials.yml in valut
 
 ```
-ansible-vault encrypt vault.yml
+ansible-vault encrypt credentials.yml
 ```
 
 update the inventory file and replace the ansible_user and ansible_password lines with a referecen to the vault
