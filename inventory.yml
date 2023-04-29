@@ -4,22 +4,22 @@ all:
     linux:
       hosts:
         linuxtarget:
-          ansible_host: 52.53.214.236
+          ansible_host: 18.144.168.174
         ansiblecontrol:
-          ansible_host: 54.193.24.63
+          ansible_host: 18.144.177.49
     windows:
       children:
         webservers:
           hosts:
             webserver1:
-              ansible_host: 54.219.41.61
+              ansible_host: 54.176.168.85
               ansible_user: Administrator
               ansible_password: JustM300
               ansible_connection: winrm
               ansible_winrm_transport: ntlm
               ansible_winrm_server_cert_validation: ignore
             webserver2:
-              ansible_host: 13.57.210.40
+              ansible_host: 13.52.179.175
               ansible_user: Administrator
               ansible_password: JustM300
               ansible_connection: winrm
