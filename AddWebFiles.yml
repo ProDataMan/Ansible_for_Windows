@@ -18,6 +18,10 @@
         restart: yes
         include_sub_features: yes
         include_management_tools: yes  
+        
+    - name: Delete files
+      become: yes
+      win_shell: rm -r c:\inetpub\wwwroot\*
     - name: Ensure latest index.html file is present
       win_copy:
         src: files/*
