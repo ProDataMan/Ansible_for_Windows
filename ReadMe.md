@@ -83,7 +83,11 @@ For example, you can run the following command to execute the win_iis.yml playbo
 ```ansible
 ansible-playbook -i inventory win_iis.yml
 ```
-
+Update the Ansible Cofiguration to use the new Inventory.yml by default
+```
+	[defaults]
+	  INVENTORY = inventory.yml
+```
 Dynamic Inventory
 ```
 ansible-playbook -i inventory DynamicInventory.yml
@@ -125,6 +129,6 @@ ansible-playbook AddWebFiles.yml --ask-vault-pass
 Update the ansible cfg file to include the path to the vault_pass file
 ```
 	[defaults]
-	  inventory = inventory.yml
+	  INVENTORY = inventory.yml
   	  vault_password_file = ~/vault/vault_pass
 ```
