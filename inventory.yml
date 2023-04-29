@@ -13,8 +13,8 @@ all:
           hosts:
             webserver1:
               ansible_host: 54.176.168.85
-              ansible_user: "{{ vault_windows_user }}"
-              ansible_password: "{{ vault_windows_password }}"
+              ansible_user: Administrator
+              ansible_password: JustM300
               ansible_connection: winrm
               ansible_winrm_transport: ntlm
               ansible_winrm_server_cert_validation: ignore
