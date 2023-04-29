@@ -104,3 +104,14 @@ update the inventory file and replace the ansible_user and ansible_password line
           ansible_user: "{{ vault_windows_user }}"
           ansible_password: "{{ vault_windows_password }}"
 ```
+Execute playbook using vault credentials
+
+```
+ansible-playbook AddWebFiles.yml --ask-vault-pass
+```
+
+Add this to the ansible cfg file
+```
+	[defaults]
+  	  vault_password_file = ~/.vault_pass
+```
