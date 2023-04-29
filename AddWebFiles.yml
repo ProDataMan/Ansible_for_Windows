@@ -19,10 +19,10 @@
         include_sub_features: yes
         include_management_tools: yes  
     - name: Ensure latest index.html file is present
-      copy:
+      win_copy:
         src: files/*
         dest: c:\inetpub\wwwroot\
-      delegate_to: localhost
+        force: yes
     - name: Ensure IIS is started
       win_service:
         name: "{{ service_name }}"
