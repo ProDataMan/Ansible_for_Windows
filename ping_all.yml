@@ -1,6 +1,6 @@
 ---
 - name: Ping All Servers
-  hosts: webservers
+  hosts: all
   gather_facts: yes
   vars_files:
     - vault/credentials.yml
@@ -12,3 +12,4 @@
     - name: Ping Windows hosts
       win_ping:
       when: "'windows' in group_names"
+
