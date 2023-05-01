@@ -15,7 +15,7 @@ webservers:
       ansible_winrm_transport: ntlm
       ansible_winrm_server_cert_validation: ignore
   vars_files:
-    - vault/credentials.yml
+    - ~/vault/credentials.yml
   vars:
     user: "{{ vault_windows_user }}"
     pwd: "{{ windows_pwd }}"
