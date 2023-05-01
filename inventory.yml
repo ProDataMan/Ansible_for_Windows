@@ -20,8 +20,8 @@ all:
               ansible_winrm_server_cert_validation: ignore
             webserver2:
               ansible_host: 13.52.179.175
-              ansible_user: "{{ vault_user }}"
-              ansible_password: "{{ vault_user }}"
+              ansible_user: "{{ user }}"
+              ansible_password: "{{ pwd }}"
               ansible_connection: winrm
               ansible_winrm_transport: ntlm
               ansible_winrm_server_cert_validation: ignore
