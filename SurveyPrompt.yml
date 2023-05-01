@@ -3,12 +3,13 @@
   hosts: all
   gather_facts: false
   vars_prompt:
-    - name: name
-      prompt: "What is your name?"
-    - name: favorite
-      prompt: "What is your favorite food?"
+    - name: private
+      prompt: "Private or Hidden Prompts are the default in Ansible Surveys. Type Anything"
+    - name: public
+      prompt: "With the private: no setting you can see your response to the Survey Prompt. Type Anything"
       private: no
-  tasks:
+
+tasks:
     - name: Display name and favorite food
       debug:
-        msg: "Hello {{ name }}! Your favorite food is {{ favorite }}."
+        msg: "This is your response to the private prompt {{ private }}. This is the public resposne {{ public }}."
