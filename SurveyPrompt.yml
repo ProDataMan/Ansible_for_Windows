@@ -2,14 +2,12 @@
 - name: Playbook with survey
   hosts: all
   gather_facts: false
-
   vars_prompt:
     - name: name
       prompt: "What is your name?"
     - name: favorite
       prompt: "What is your favorite food?"
       private: no
-
   tasks:
     - name: Display name and favorite food
       debug:
