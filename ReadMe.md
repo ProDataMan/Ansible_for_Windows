@@ -2,17 +2,27 @@
 1. ### Launch an Amazon EC2 instance running a Linux operating system such as Ubuntu. 
     You can use this instance as your Ansible control node.
 
-2. ### Install Ansible on the Linux instance using the package manager for your operating system. 
+2. ### Install Ansible on the Linux instance using pip. 
     For example, if you're using Ubuntu, you can run the following command:
+
 ```
 sudo apt-get update
-sudo apt-get install ansible
 ```
 
 Install Python
 
 ```
-sudo apt-get update && sudo apt-get install -y python3-pip
+sudo apt-get install -y python3-pip
+```
+
+Install Ansible using pip3
+```
+pip3 install ansible
+```
+
+Install Win RM
+```
+pip3 install "pywinrm>=0.3.0"
 ```
 
 Install boto3 and botocore

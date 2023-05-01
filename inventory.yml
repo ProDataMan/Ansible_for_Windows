@@ -3,9 +3,9 @@ all:
   children:
     linux:
       hosts:
-        linuxtarget:
-          ansible_host: 18.144.168.174
         ansiblecontrol:
+          ansible_host: 18.144.168.174
+        linuxtarget:
           ansible_host: 18.144.168.174
     windows:
       children:
