@@ -1,6 +1,6 @@
 ---
 - name: Ping Windows servers
-  hosts: windows
+  hosts: webservers
   gather_facts: yes
   tasks:
   - name: Ping Windows server
