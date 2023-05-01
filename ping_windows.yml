@@ -2,6 +2,8 @@
 - name: Ping Windows servers
   hosts: webservers
   gather_facts: yes
+  vars_files:
+    - vault/credentials.yml
   tasks:
   - name: Ping Windows server
     win_ping:
