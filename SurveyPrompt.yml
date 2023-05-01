@@ -3,13 +3,12 @@
   hosts: all
   gather_facts: false
   vars_prompt:
-    - name: private
+    - name: privatePrompt
       prompt: "Private or Hidden Prompts are the default in Ansible Surveys. Type Anything"
-    - name: public
+    - name: publicPrompt
       prompt: "With the private: no setting you can see your response to the Survey Prompt. Type Anything"
       private: no
-
 tasks:
     - name: Display name and favorite food
       debug:
-        msg: "This is your response to the private prompt {{ private }}. This is the public resposne {{ public }}."
+        msg: "This is your response to the private prompt {{ privatePrompt }}. This is the public resposne {{ publicPrompt }}."
