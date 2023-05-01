@@ -8,7 +8,7 @@
     - name: publicPrompt
       prompt: "With the private: no setting you can see your response to the Survey Prompt. Type Anything"
       private: no
-tasks:
+  tasks:
     - name: Display name and favorite food
       debug:
-        msg: "This is your response to the private prompt {{ privatePrompt }}. This is the public resposne {{ publicPrompt }}."
+      msg: "This is your response to the private prompt {{ privatePrompt }}. This is the public resposne {{ publicPrompt }}."
