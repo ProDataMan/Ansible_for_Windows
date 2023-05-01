@@ -17,5 +17,5 @@ webservers:
   vars_files:
     - vault/credentials.yml
   vars:
-    user: "{{ user }}"
-    pwd: "{{ pwd }}"
+    user: "{{ windows_user }}"
+    pwd: "{{ windows_pwd }}"
