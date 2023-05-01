@@ -1,5 +1,6 @@
 ---
-webservers:
+  vars_files:
+    - vault/credentials.ymlwebservers:
   hosts:
     webserver1:
       ansible_host: 54.176.168.85
