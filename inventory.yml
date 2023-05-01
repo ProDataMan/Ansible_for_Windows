@@ -6,7 +6,7 @@ all:
         linuxtarget:
           ansible_host: 18.144.168.174
         ansiblecontrol:
-          ansible_host: 18.144.177.49
+          ansible_host: 18.144.168.174
     windows:
       children:
         webservers:
