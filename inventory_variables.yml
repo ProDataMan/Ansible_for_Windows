@@ -1,3 +1,5 @@
+This is my inventory file:
+
 webservers:
   hosts:
     webserver1:
@@ -9,7 +11,7 @@ webservers:
       ansible_winrm_server_cert_validation: ignore
     webserver2:
       ansible_host: 13.52.179.175
-      ansible_user: "{{ winodws_user }}"
+      ansible_user: "{{ windows_user }}"
       ansible_password: "{{ pwd }}"
       ansible_connection: winrm
       ansible_winrm_transport: ntlm
@@ -19,3 +21,8 @@ webservers:
   vars:
     user: "{{ windows_user }}"
     pwd: "{{ windows_pwd }}"
+
+This is my inventory file: 
+
+windows_user: Administrator
+windows_pwd: JustM300
