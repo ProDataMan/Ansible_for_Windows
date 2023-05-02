@@ -1,5 +1,3 @@
-This is my inventory file:
-
 webservers:
   hosts:
     webserver1:
@@ -21,8 +19,6 @@ webservers:
   vars:
     user: "{{ windows_user }}"
     pwd: "{{ windows_pwd }}"
-
-This is my inventory file: 
-
+    
 windows_user: Administrator
 windows_pwd: JustM300
