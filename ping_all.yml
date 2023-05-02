@@ -2,6 +2,8 @@
 - name: Ping All Servers
   hosts: all
   gather_facts: yes
+  vars_files:
+    - vault/credentials.yml
   tasks:
     - name: Ping Linux hosts
       ping:
