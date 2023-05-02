@@ -20,6 +20,13 @@ Install Ansible using pip3
 pip3 install ansible
 ```
 
+Reboot Ubuntu to update the path and complete Ansible setup
+```
+sudo reboot
+```
+You may need to reconnect to the Ubuntu server with Putty
+From the PuTTY menu select Restart Session
+
 Install Win RM
 ```
 pip3 install "pywinrm>=0.3.0"
